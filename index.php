@@ -10,6 +10,20 @@
 //$codi = "asdrfd";
 
 
-require "index.view.php";
+//require "index.view.php";
+require 'core/bootstrap.php';
 
-Router::load('app/routes.php')->direct($uri);
+//$uri = "contact";
+
+//dd($_SERVER);
+$uri=trim($_SERVER['REQUEST_URI'],'/');
+
+
+//amb la instrucció trim('/about/','/'); sen's carregaria les barres.
+Router::load('app/routes.php')->direct($uri); //això és equivalent a:
+
+//
+//$router = new Router();
+//
+//$router->load(app/routes.php);
+//$router->direct($uri);
