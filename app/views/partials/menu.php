@@ -8,6 +8,9 @@
         <li><a href="/contact">Contact</a></li>
         <li><a href="/about">About as</a></li>
         <li><a href="/news">News</a></li>
+        <li><a href="/task">tasks</a></li>
+        <li><a href="/task">Afegir Task</a></li>
+
     </ul>
 
 </nav>

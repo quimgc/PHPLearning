@@ -14,28 +14,22 @@ class Connection
     public static function connect($config) {
 
         try {
+                    $driver = $config['database']['driver'];
+                    $host = $config['database']['host'];
+                    $dbname = $config['database']['name'];
+                    $username = $config['database']['username'];
+                    $password = $config['database']['password'];
 
-            /**
-             * TODO.
-             */
-//            $username = $config['database']['username'];
-//          //  dd($username);
-//         $password = $config['database']['password'];
-//         $driver = $config['database']['driver'];
-//         $host = $config['database']['host'];
-//         $dbname = $config['database']['name'];
-//
-//            $prova = $config['database']['driver'].':'.$config['database']['host'].';dbname='.$config['database']['name'];
-//            dd($prova);
-//        // dd($password);
-//
-//            $dsn = $driver.':host=' . $host . ';dbname=' . $dbname;
-//
-//            return new PDO($dsn,
-//                $username,
-//                $password);
+                    $dsn = $driver . ':' . $host . ';' . 'dbname='.$dbname;
 
-return new PDO('mysql:host=127.0.0.1;dbname=prova','debian-sys-maint','Fox8U2xDeZ1fBcFm');
+            return new PDO(
+                        $dsn,
+                        $username,
+                        $password
+
+            );
+
+//return new PDO('mysql:host=127.0.0.1;dbname=prova','debian-sys-maint','Fox8U2xDeZ1fBcFm');
 
 
         } catch (PDOException $e){
