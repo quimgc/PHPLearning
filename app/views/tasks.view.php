@@ -3,6 +3,19 @@
 
 <h1>Tasks</h1>
 
-<p>Hola aquesta és la nostra adreça de contacte.</p>
+    <ul>
+        <?php foreach ($tasks as $task) : ?>
+
+            <li>
+
+                <?= $task->name ;?>
+
+
+            </li>
+
+
+
+        <?php endforeach; ?>
+    </ul>
 
 <?php require("app/views/partials/tasks.view.php") ?>

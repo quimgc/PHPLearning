@@ -9,7 +9,6 @@
 //Model
 //$codi = "asdrfd";
 
-
 //require "index.view.php";
 require 'core/bootstrap.php';
 
