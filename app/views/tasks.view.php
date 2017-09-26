@@ -18,4 +18,4 @@
         <?php endforeach; ?>
     </ul>
 
-<?php require("app/views/partials/tasks.view.php") ?>
+<?php require("app/views/partials/footer.php") ?>

@@ -1,0 +1,10 @@
+{
+    "name": "quim/php-learning",
+    "authors": [
+        {
+            "name": "quimgc",
+            "email": "quimgonzalez@iesebre.com"
+        }
+    ],
+    "require": {}
+}

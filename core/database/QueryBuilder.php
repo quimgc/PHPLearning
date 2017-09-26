@@ -32,7 +32,7 @@ class QueryBuilder {
         $statment->execute();
 
 
-        return $statment->fetchAll(PDO::FETCH_CLASS,'Task');
+        return $statment->fetchAll(PDO::FETCH_CLASS);
 
     }
 

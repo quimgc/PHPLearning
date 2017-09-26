@@ -13,12 +13,9 @@ require 'core/database/QueryBuilder.php';
 require "core/Router.php";
 require "app/routes.php";
 require "core/Request.php";
-
-$router = new Router();
-
-$router->define($routes);
+require "core/App.php";
 
 $pdo = Connection::connect($config);
-//comentari2
 
-$query = new QueryBuilder($pdo);
+App::bind('database',new QueryBuilder($pdo));
+

@@ -11,4 +11,3 @@
 
 </form>
 
-<?php require("app/views/partials/tasks.view.php") ?>
