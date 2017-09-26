@@ -1,4 +1,6 @@
 <?php
+namespace Llambricore;
+
 
 class App {
 

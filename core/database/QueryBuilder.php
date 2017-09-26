@@ -1,11 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: quim
- * Date: 20/09/17
- * Time: 21:28
- */
+namespace Llambricore\Database;
 
+
+use PDO;
 class QueryBuilder {
 
 
@@ -43,6 +40,26 @@ class QueryBuilder {
      * @param $filters
      */
     public function where($table, $filters) {
+
+
+    }
+
+    public function insert($table, $fields) {
+
+        implode(',',$fields);
+        $columns = implode(',',array_keys($fields));
+        $values = ":" . implode(', :',array_keys($fields));
+
+        $sql = "INSERT INTO $table ($columns) VALUES ($values)";
+        try {
+
+            $statment= $this->pdo->prepare($sql);
+            $statment->execute($fields);
+
+        } catch (Exception $e) {
+            die("Algo ha passat");
+        }
+        $statment= $this->pdo->prepare($sql);
 
 
     }

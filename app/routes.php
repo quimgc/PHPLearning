@@ -6,29 +6,18 @@
  * Time: 21:44
  */
 
-//s'ha de referenciar als controllers
-//return [
-//
-//    '' => 'app/controller/home.php',
-//    'index.php' => 'app/controller/home.php',
-//
-//    'contact' => 'app/controller/contact.php',
-//    'about' => 'app/controller/about.php',
-//    'news' => 'app/controller/news.php',
-//    'tasks' => 'app/controller/tasks.php',
-//
-//    'task/add' => 'app/controller/addTask.php',
-//    'task_add' => 'app/controller/addTask1.php'
-//
-//];
+use Llambricore\Lib\Router;
 
 $router = new Router();
+$router->get('','PagesController@home');
+$router->get('index.php','PagesController@home');
+$router->get('contact','PagesController@contact');
+$router->get('about','PagesController@about');
+$router->get('news','PagesController@news');
+$router->get('tasks','TaskController@index');
+$router->get('task','TaskController@create');
+$router->post('task','TaskController@store');
 
-$router->get('','app/controller/home.php');
-$router->get('index.php','app/controller/home.php');
-$router->get('contact','app/controller/contact.php');
-$router->get('about','app/controller/about.php');
-$router->get('news','app/controller/news.php');
-$router->get('tasks','app/controller/tasks.php');
-$router->get('task','app/controller/addTask.php');
-$router->post('task','app/controller/addTask1.php');
+
+
+$router->get('error','TasksControllerNOR@error');

@@ -1,10 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: quim
- * Date: 20/09/17
- * Time: 21:19
- */
+namespace Llambricore\Database;
+
+use PDO;
+use PDOException;
 
 class Connection
 {

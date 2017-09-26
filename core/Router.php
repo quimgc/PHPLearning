@@ -1,10 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: quim
- * Date: 22/09/17
- * Time: 16:26
- */
+namespace Llambricore\Lib;
+
 
 class Router{
 
@@ -28,14 +24,14 @@ class Router{
     }
 
 
-    public  function get($uri,$file){
-        $this->routes['GET'][$uri] = $file;
+    public  function get($uri,$action){
+        $this->routes['GET'][$uri] = $action;
 
     }
 
-    public function post($uri,$file){
+    public function post($uri,$action){
 
-        $this->routes['POST'][$uri] = $file;
+        $this->routes['POST'][$uri] = $action;
 
     }
 
@@ -59,18 +55,28 @@ class Router{
         throw new Exception("No s'ha trobat cap ruta");
     }
 
-        require $this->routes[$requestType][$uri];
+    $action = explode('@',$this->routes[$requestType][$uri]);
+    $controller = 'App\Controllers\\'.$action[0];
+    $method = $action[1];
 
-//equivalent al de d'alt:
+/***
+ * TODO.
+ */
 
-//
-//            if(array_key_exists($this->routes,$uri)){
-//            require $this->routes[$uri];
-//
-//        }else{
-//            //404
-//            throw new Exception("No s'ha trobat cap ruta");
+
+$controller = new $controller();
+        $controller->$method();
+//        if(!class_exists($controller = new $controller(),false)){
+//            throw new Exception("No s'ha trobat el controlador!");
 //        }
+//
+//
+//        if(!method_exists($controller->$method(),false)){
+//            throw new Exception("No s'ha trobat el mèotde!");
+//
+//       }
+
+
     }
 
 
