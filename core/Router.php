@@ -72,8 +72,6 @@ if(!class_exists($controller)) {
 
 }
 
-
-
         if(!method_exists($controller, $action)){
 
             throw new Exception("No s'ha trobat el mèotde!");
