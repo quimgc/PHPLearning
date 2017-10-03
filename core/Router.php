@@ -63,18 +63,20 @@ class Router{
  * TODO.
  */
 
+if(!class_exists($controller)) {
+    throw new \Exception("No class found!!");
 
-$controller = new $controller();
-        $controller->$method();
-//        if(!class_exists($controller = new $controller(),false)){
-//            throw new Exception("No s'ha trobat el controlador!");
-//        }
-//
-//
-//        if(!method_exists($controller->$method(),false)){
-//            throw new Exception("No s'ha trobat el mèotde!");
-//
-//       }
+}else{
+    $controller = new $controller();
+    $controller->$method();
+
+}
+
+        if(!method_exists($controller, $action)){
+
+            throw new Exception("No s'ha trobat el mèotde!");
+
+       }
 
 
     }
