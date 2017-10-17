@@ -5,7 +5,8 @@ class PagesController {
 
     public function home() {
 
-        require 'app/views/home.view.php';
+//        require 'app/views/home.view.php';
+        view('home');
 }
 
     public function news() {
@@ -23,8 +24,8 @@ class PagesController {
 
     public function about() {
 
-        require 'app/views/about.view.php';
-
+//        require 'app/views/about.view.php';
+        view('about');
 }
 
 

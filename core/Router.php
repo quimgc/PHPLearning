@@ -24,7 +24,8 @@ class Router{
     }
 
 
-    public  function get($uri,$action){
+    public function get($uri,$action){
+
         $this->routes['GET'][$uri] = $action;
 
     }
@@ -59,9 +60,7 @@ class Router{
     $controller = 'App\Controllers\\'.$action[0];
     $method = $action[1];
 
-/***
- * TODO.
- */
+
 
 if(!class_exists($controller)) {
     throw new \Exception("No class found!!");

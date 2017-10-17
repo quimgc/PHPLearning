@@ -9,6 +9,7 @@
 use Llambricore\Lib\Router;
 
 $router = new Router();
+//Route::get('','PagesController@home');
 $router->get('','PagesController@home');
 $router->get('index.php','PagesController@home');
 $router->get('contact','PagesController@contact');
@@ -19,5 +20,6 @@ $router->get('task','TaskController@create');
 $router->post('task','TaskController@store');
 
 
-
 $router->get('error','TasksControllerNOR@error');
+
+

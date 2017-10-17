@@ -62,3 +62,11 @@ function fetchAllTask($pdo){
     return $statment->fetchAll(PDO::FETCH_CLASS,'Task');
 
 }
+
+
+ function view($view){
+
+    require "app/views/$view.view.php";
+
+
+}
