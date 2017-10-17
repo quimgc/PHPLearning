@@ -11,14 +11,14 @@ class PagesController {
 
     public function news() {
 
-        require 'app/views/news.view.php';
+        view('news');
 
 
 }
 
     public function contact() {
 
-        require 'app/views/contact.view.php';
+        view('contact');
 
 }
 
